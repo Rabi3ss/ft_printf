@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/04 20:45:30 by relyaman          #+#    #+#             */
+/*   Updated: 2026/11/04 20:46:04 by relyaman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_puthex(unsigned int n, char c)
+int	ft_puthex(unsigned int n, char c)
 {
 	char	p[17];
 	char	*hex;

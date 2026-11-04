@@ -6,13 +6,13 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 16:15:23 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/04 10:44:07 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/04 20:48:03 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	if (-1 == write(1, &c, 1))
 		return (-1);

@@ -6,13 +6,13 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 16:38:09 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/04 11:12:29 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/04 20:47:30 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
 	long	ln;
 	char	num;
@@ -27,9 +27,9 @@ int		ft_putnbr(int n)
 		count = 2;
 	}
 	if ((ln / 10) != 0)
-	count += ft_putnbr (ln / 10);
+		count += ft_putnbr (ln / 10);
 	num = (ln % 10) + '0';
-	if ( -1 == write(1, &num, 1))
+	if (-1 == write (1, &num, 1))
 		return (-1);
 	return (count);
 }
