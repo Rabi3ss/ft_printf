@@ -2,7 +2,7 @@ NAME = libftprintf.a
 FLAGS = -Wall -Wextra -Werror
 CC = cc
 
-SRC = ft_putadders.c \
+SRC = ft_putaddres.c ft_putunsi.c \
 	ft_putchar.c ft_puthex.c \
 	ft_putnbr.c ft_putstr.c
 

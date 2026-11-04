@@ -1,31 +1,31 @@
 
 #include "ft_printf.h"
 
-void	ft_puthex(int n, char c)
+int		ft_puthex(unsigned int n, char c)
 {
-	char	p[16];
-	char	*hex = "0123456789abcdef";
-	char	*HEX = "0123456789ABCDEF";
+	char	p[17];
+	char	*hex;
 	int		i;
-	
+
+	hex = NULL;
 	i = 0;
-	if(c == 'x')
+	if (n == 0)
 	{
-		while (n > 0)
-		{		
-			p[i] = hex[n % 16];
-			n = n / 16;
-		}
-		ft_putstr(p);
+		write(1, "0", 1);
+		return (0);
 	}
-	else if(c == 'X')
+	if (c == 'x')
+		hex = "0123456789abcdef";
+	else
+		hex = "0123456789ABCDEF";
+	while (n > 0)
 	{
-		while (n > 0)
-		{		
-			p[i] = HEX[n % 16];
-			n = n / 16;
-		}
-		ft_putstr(p);
+		p[i] = hex[n % 16];
+		n = n / 16;
+		i++;
 	}
-		
+	p[i] = '\0';
+	while (i > 0)
+		write(1, &p[--i], 1);
+	return (0);
 }

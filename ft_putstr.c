@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: relyaman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 16:21:22 by relyaman          #+#    #+#             */
-/*   Updated: 2026/10/18 16:32:29 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/04 13:34:36 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+int		ft_putstr(char *s)
 {
-	while (*s)
+	int		count;
+	
+	count = 0;
+	if (s == NULL)
+		return (write(1, "(null)", 6));
+	while (s[count])
 	{
-		write(1, s, 1);
-		s++;
+		if (-1 == write(1, &s[count], 1))
+			return (-1);
+		count++;
 	}
+	return (count);
 }
