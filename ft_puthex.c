@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 20:45:30 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/04 20:46:04 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/09 22:00:49 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 int	ft_puthex(unsigned int n, char c)
 {
-	char	p[17];
+	char	p[9];
 	char	*hex;
 	int		i;
+	int		count;
 
 	hex = NULL;
 	i = 0;
 	if (n == 0)
-	{
-		write(1, "0", 1);
-		return (0);
-	}
+		return (write(1, "0", 1));
 	if (c == 'x')
 		hex = "0123456789abcdef";
 	else
@@ -36,7 +34,8 @@ int	ft_puthex(unsigned int n, char c)
 		i++;
 	}
 	p[i] = '\0';
+	count = i;
 	while (i > 0)
 		write(1, &p[--i], 1);
-	return (0);
+	return (count);
 }
