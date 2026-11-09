@@ -18,28 +18,27 @@ static int	print_format(char spec, va_list ap)
 
 	count = 0;
 	if(spec == 'c')
-		count = ft_putchar();
+		count = ft_putchar(va_arg(ap, int));
 	else if (spec == 's')
-		count = ft_putstr();
+		count = ft_putstr(va_arg(ap, void *));
 	else if (spec == 'p')
-		count = ft_putaddres();
+		count = ft_putaddres(va_arg(ap, void *));
 	else if (spec == 'd' || spec == 'i')
-		count = ft_putnbr();
+		count = ft_putnbr(va_arg(ap, int));
 	else if (spec == 'u')
-		count = ft_putunsi();
+		count = ft_putunsi(va_arg(ap, unsigned int));
 	else if (spec == 'x' || spec == 'X')
-		count = ft_puthex();
+		count = ft_puthex(va_arg(ap, unsigned int), spec);
 	else if (spec == '%')
 	{
-		if (write(1, "%", 1) == -1)
-			return (-1);
+			ft_putchar('%');
 	}
 	else
-		if(write(1, (char)ap,1) == -1)
-			return (-1);
+		ft_putchar(va_arg(ap, int));
+	return (count);
 }
 
-int	ft_printf(const char *, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int	count;
@@ -53,9 +52,9 @@ int	ft_printf(const char *, ...)
 		if(format[i] == '%')
 			count += print_format(format[++i], ap);
 		else
-			count += ft_putchar(&format[i]);
+			count += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(ap);
-	return count;
+	return (count);
 }

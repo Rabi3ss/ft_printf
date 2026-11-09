@@ -18,3 +18,8 @@ int	ft_putchar(char c)
 		return (-1);
 	return (1);
 }
+
+// int main ()
+// {
+// 	ft_putchar('A');
+// }
