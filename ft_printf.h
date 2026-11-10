@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 20:51:20 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/09 18:48:30 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/10 11:49:09 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 int	ft_printf(const char *format, ...);
 int	ft_putaddres(void *ptr);

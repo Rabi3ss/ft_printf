@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 16:15:23 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/04 20:48:03 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/10 11:46:54 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 int	ft_putchar(char c)
 {
-	if (-1 == write(1, &c, 1))
-		return (-1);
+	write(1, &c, 1);
 	return (1);
 }
-
-// int main ()
-// {
-// 	ft_putchar('A');
-// }
