@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 14:02:30 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/11 18:18:04 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/11 18:27:39 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static int	print_format(char spec, va_list ap)
 {
 	int	count;
 
-	
 	count = 0;
 	if (spec == 'c')
 		count = ft_putchar (va_arg(ap, int));
