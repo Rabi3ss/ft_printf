@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 16:38:09 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/04 20:47:30 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/10 18:43:37 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	ft_putnbr(int n)
 	if ((ln / 10) != 0)
 		count += ft_putnbr (ln / 10);
 	num = (ln % 10) + '0';
-	if (-1 == write (1, &num, 1))
-		return (-1);
+	write (1, &num, 1);
 	return (count);
 }

@@ -13,7 +13,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o : %.c
+%.o : %.c ft_printf.h
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
@@ -23,3 +23,5 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+.SECONDARY: $(OBJS)

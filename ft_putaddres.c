@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 09:55:32 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/10 11:52:24 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/11 11:46:21 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_hex(uintptr_t n)
 {
-	char	p[17];
+	char	p[16];
 	char	*hex;
 	int		i;
 	int		count;
@@ -31,8 +31,8 @@ static int	ft_hex(uintptr_t n)
 	count = i;
 	while (i > 0)
 	{
+		--i;
 		write(1, &p[i], 1);
-		i++;
 	}
 	return (count);
 }

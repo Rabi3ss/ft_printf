@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 14:02:30 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/10 16:11:48 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/11 18:18:04 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ static int	print_format(char spec, va_list ap)
 {
 	int	count;
 
-	if(spec == '\0')
-		return (-1);
+	
 	count = 0;
 	if (spec == 'c')
 		count = ft_putchar (va_arg(ap, int));
@@ -32,40 +31,38 @@ static int	print_format(char spec, va_list ap)
 	else if (spec == 'x' || spec == 'X')
 		count = ft_puthex (va_arg(ap, unsigned int), spec);
 	else if (spec == '%')
+		count = ft_putchar ('%');
+	else
 	{
 		count = ft_putchar ('%');
+		count = ft_putchar (spec);
 	}
-	//else
-	//{
-	//	count = ft_putchar ('%');
-	//	count = ft_putchar (spec);
-	//}
-	return (count); 
-	}
+	return (count);
+}
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		count;
-	int		i;
 
-	i = 0;
 	count = 0;
 	if (format == NULL)
-		return(-1);
+		return (-1);
 	va_start(ap, format);
-	while (format[i])
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			if (format[++i] == 0)
+			if (*(++format) == 0)
+			{
+				va_end(ap);
 				return (-1);
-			count += print_format(format[i], ap);
+			}
+			count += print_format(*format, ap);
 		}
 		else
-			count += ft_putchar(format[i]);
-		i++;
-		ft_putnbr (i);
+			count += ft_putchar(*format);
+		format++;
 	}
 	va_end(ap);
 	return (count);
