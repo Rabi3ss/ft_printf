@@ -17,11 +17,11 @@ $(NAME) : $(OBJ)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
-	rm $(OBJ)
+	rm -f $(OBJ)
 
 fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
 
-.SECONDARY: $(OBJS)
+.PHONY: all clean fclean re

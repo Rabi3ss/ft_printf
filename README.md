@@ -8,11 +8,7 @@
 library, `libftprintf.a`, that can be linked into future projects.
 
 **Overview:** `ft_printf` takes a format string and a variable number of
-arguments, writes the formatted output to standard output, and returns the
-number of characters printed (or `-1` on write error). It does not reproduce
-the buffer management of the original `printf`.
-
-### Supported conversions
+arguments, writes the formatted output to standard output.
 
  Specifier 
 -----------

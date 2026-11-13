@@ -6,13 +6,13 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 09:55:32 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/11 11:46:21 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/13 16:48:17 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_hex(uintptr_t n)
+static int	ft_hex(unsigned long n)
 {
 	char	p[16];
 	char	*hex;
@@ -40,10 +40,10 @@ static int	ft_hex(uintptr_t n)
 int	ft_putaddres(void *ptr)
 {
 	int			ret;
-	uintptr_t	n;
+	unsigned long	n;
 
 	ret = 0;
-	n = (uintptr_t)ptr;
+	n = (unsigned long)ptr;
 	if (n == 0)
 		return (write(1, "(nil)", 5));
 	write(1, "0x", 2);

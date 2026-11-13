@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 20:51:20 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/11 12:12:04 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/13 16:48:42 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stddef.h>
 # include <unistd.h>
-# include <stdint.h>
 # include <stdarg.h>
 
 int	ft_printf(const char *format, ...);
