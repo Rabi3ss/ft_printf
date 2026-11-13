@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 09:55:32 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/13 16:48:17 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/13 22:17:59 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	ft_hex(unsigned long n)
 
 int	ft_putaddres(void *ptr)
 {
-	int			ret;
+	int				ret;
 	unsigned long	n;
 
 	ret = 0;

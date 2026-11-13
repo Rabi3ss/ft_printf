@@ -6,7 +6,7 @@
 /*   By: relyaman <relyaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 14:02:30 by relyaman          #+#    #+#             */
-/*   Updated: 2026/11/13 16:23:37 by relyaman         ###   ########.fr       */
+/*   Updated: 2026/11/13 18:32:25 by relyaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	print_format(char spec, va_list ap)
 	{
 		ft_putchar ('%');
 		ft_putchar (spec);
-		return(2);
+		return (2);
 	}
 	return (count);
 }
